@@ -366,7 +366,7 @@ client.on('group-participants-update', async (anu) => {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `*😆finalmente, la carga del grupo se redujo en 1.bye bye👋 @${num.split('@')[0]} *no te extrañaremos🐤*`
+				teks = `*😆finalmente, la carga del grupo se redujo en 1.bye bye👋 @${num.split('@')[0]}  *no te extrañaremos🐤*`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			}
@@ -648,37 +648,19 @@ client.on('group-participants-update', async (anu) => {
  
 				//function antilink 
 				if (messagesC.includes("://chat.whatsapp.com/")){
+	                        if (messagesC.includes("://youtu.be//")){
+	                        if (messagesC.includes("://Abre este enlace para unirte a mi grupo de WhatsApp:")){
+	                        if (messagesC.includes("://Invitación a chat de grupo")){
 					if (!isGroup) return
 					if (!isAntiLink) return
 					if (isGroupAdmins) return reply('karena kamu adalah admin group, bot tidak akan kick kamu')
 					client.updatePresence(from, Presence.composing)
 					if (messagesC.includes("#izinadmin")) return reply("#izinadmin diterima")
 					var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-						reply(`*☠️ENLACE DETECTADO,🖕ELIMINADO POR NO CUMPLIR LAS REGLAS🍁* ${sender.split("@")[0]} *SE LE ELIMINARÁ DEL GRUPO EN 5 SEGUNDOS*`)
+						reply(`*☠️ENLACE DETECTADO,🖕ELIMINADO POR NO CUMPLIR LAS REGLAS🍁* ${sender.split("@")[0]} `)
 						setTimeout( () => {
 						client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-					}, 5000)
-						setTimeout( () => {
-						client.updatePresence(from, Presence.composing)
-						reply("1")
-					}, 4000)
-						setTimeout( () => {
-						client.updatePresence(from, Presence.composing)
-						reply("2")
-					}, 3000)
-						setTimeout( () => {
-						client.updatePresence(from, Presence.composing)
-						reply("3")
-					}, 2000)
-						setTimeout( () => {
-						client.updatePresence(from, Presence.composing)
-						reply("4")
-					}, 1000)
-						setTimeout( () => {
-						client.updatePresence(from, Presence.composing)
-						reply("5,SHUPALA🖕")
-					}, 0)
-				}
+				
  	       
  	     
  	           //function balance
@@ -1791,7 +1773,7 @@ client.on('group-participants-update', async (anu) => {
 					teks = (args.length > 1) ? body.slice(8).trim() : ''
 					teks += '\n\n'
 					for (let mem of groupMembers) {
-						teks += `┣➥ @${mem.jid.split('@')[0]}\n`
+						teks += ``
 						members_id.push(mem.jid)
 					}
 					mentions(teks, members_id, true)
