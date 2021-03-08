@@ -38,9 +38,9 @@ const { ind } = require('./language')
 /********** MENU SETTING **********/
 const vcard = 'BEGIN:VCARD\n' 
             + 'VERSION:3.0\n' 
-            + 'FN:Affis Admin\n' 
+            + 'FN:EDAR Admin\n' 
             + 'ORG: Pengembang XBot;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=6282334297175:+62 823-3429-7175\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=50498798682:+50498798682\n' 
             + 'END:VCARD' 
 blocked = []   
 prefix = '#'
@@ -52,7 +52,7 @@ cr = '*BOT INI SUDAH TERVERIFIKASI*'
 /*************************************/
 
 /******** OWNER NUMBER**********/
-const ownerNumber = ["62895710073737@s.whatsapp.net","6282334297175@s.whatsapp.net"] 
+const ownerNumber = ["50498798682@s.whatsapp.net","50498798682@s.whatsapp.net"] 
 /************************************/
 
        
@@ -356,7 +356,7 @@ client.on('group-participants-update', async (anu) => {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `*🙊HOLA👋* @${num.split('@')[0]}\Bienvenido al grupo👉 *${mdata.subject}* *😉RECUERDA CUMPLIR CON LAS NORMATIVAS Y REGLAS DEL GRUPO PARA EVITAR SER ELIMINADO😉SOLO GENTE ACTIVA OK🍁*`
+				teks = `_👋Hola..._ *@${num.split('@')[0]}\* _Bienvenid@ A_ *${mdata.subject}* _😉RECUERDA CUMPLIR CON LAS NORMATIVAS Y REGLAS DEL GRUPO PARA EVITAR SER ELIMINADO😉SOLO GENTE ACTIVA OK🍁jaja ya sabía que te unirías soy tu fans📸_`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
@@ -366,7 +366,7 @@ client.on('group-participants-update', async (anu) => {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `*😆finalmente, la carga del grupo se redujo en 1.bye bye👋 @${num.split('@')[0]} *no te extrañaremos🐤*`
+				teks = `_😆finalmente, la carga del grupo se redujo en 1.bye bye👋_ *@${num.split('@')[0]}* _No te extrañaremos🐤_`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			}
@@ -654,29 +654,29 @@ client.on('group-participants-update', async (anu) => {
 					client.updatePresence(from, Presence.composing)
 					if (messagesC.includes("#izinadmin")) return reply("#izinadmin diterima")
 					var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-						reply(`*☠️ENLACE DETECTADO,🖕ELIMINADO POR NO CUMPLIR LAS REGLAS🍁* ${sender.split("@")[0]} *SE LE ELIMINARÁ DEL GRUPO EN 5 SEGUNDOS*`)
+						reply(`_☠️ENLACE DETECTADO_ ${sender.split("@")[0]} _SE LE ELIMINARÁ DEL GRUPO_`)
 						setTimeout( () => {
 						client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
 					}, 5000)
 						setTimeout( () => {
 						client.updatePresence(from, Presence.composing)
-						reply("1")
+						reply("")
 					}, 4000)
 						setTimeout( () => {
 						client.updatePresence(from, Presence.composing)
-						reply("2")
+						reply("")
 					}, 3000)
 						setTimeout( () => {
 						client.updatePresence(from, Presence.composing)
-						reply("3")
+						reply("")
 					}, 2000)
 						setTimeout( () => {
 						client.updatePresence(from, Presence.composing)
-						reply("4")
+						reply("")
 					}, 1000)
 						setTimeout( () => {
 						client.updatePresence(from, Presence.composing)
-						reply("5,SHUPALA🖕")
+						reply("")
 					}, 0)
 				}
  	       
@@ -1167,7 +1167,7 @@ client.on('group-participants-update', async (anu) => {
          	   case 'owner':
          	   case 'creator':
                   client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
-                  client.sendMessage(from, 'Tuh nomer owner ku >_<, jangan spam atau ku block kamu',MessageType.text, { quoted: mek} )
+                  client.sendMessage(from, 'el número de mi propietario >_<, no spam o te bloaueo',MessageType.text, { quoted: mek} )
 					break    
 				case 'leaderboard':
 				case 'lb':
@@ -1780,7 +1780,7 @@ client.on('group-participants-update', async (anu) => {
 				    if (isLimit(sender)) return reply(ind.limitend(pusname))
 				    if (!isBotGroupAdmins) return reply(ind.badmin())
 				    linkgc = await client.groupInviteCode (from)
-				    yeh = `https://chat.whatsapp.com/${linkgc}\n\nlink Group *${groupName}*`
+				    yeh = `https://chat.whatsapp.com/${linkgc}\n\N_LINK DEL GRUPO_ *${groupName}*`
 				    client.sendMessage(from, yeh, text, {quoted: mek})
 			        await limitAdd(sender)
 					break
@@ -1791,7 +1791,7 @@ client.on('group-participants-update', async (anu) => {
 					teks = (args.length > 1) ? body.slice(8).trim() : ''
 					teks += '\n\n'
 					for (let mem of groupMembers) {
-						teks += `┣➥ @${mem.jid.split('@')[0]}\n`
+						teks += `🔥͜͡☛ @${mem.jid.split('@')[0]}\n`
 						members_id.push(mem.jid)
 					}
 					mentions(teks, members_id, true)
@@ -2179,7 +2179,7 @@ client.on('group-participants-update', async (anu) => {
 				
 				default:
 			if (body.startsWith(`${prefix}${command}`)) {
-                  reply(`🤔LO SIENTO:V *${pushname}*, EL COMANDO *${prefix}${command}* NO REGISTRADO EN *${prefix}menu*!`)
+                  reply(`_LO SIENTO_*${pushname}*, _EL COMANDO_ *${prefix}${command}* _NO REGISTRADO EN_ *${prefix}menu*`)
                   }
 			if (isGroup && !isCmd && isSimi && budy != undefined) {
 						console.log(budy)
