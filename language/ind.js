@@ -258,9 +258,9 @@ exports.limitend = (pushname) => {
 
 exports.limitcount = (limitCounts) => {
 	return`
-*●⃧➠SE HA DETECTADO UN ABUSO DEL BOT👋*
+*●⃧➠🎩⁩ြံঔৣ͜͡❍͜͡➣モ᠔ᥲ૨ৡ͜͡🇭🇳✟⃢⃟☠️*
 su límite restante: ${limitCounts}
-*NOTA:* _Se le atenderá más tarde_`
+*NOTA:* _Si decea agregar el bot a su grupo comunicarce con WA.me/50498798682_`
 }
 
 exports.satukos = () => {
